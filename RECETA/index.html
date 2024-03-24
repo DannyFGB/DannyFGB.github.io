@@ -63,7 +63,10 @@
     </p>
     </p>
   <script>
-    alert ("Hola, estas ingresando a la receta del sancocho de pescado. Bienvenido.");
+    if (!localStorage.getItem('alertaMostrado')) {
+      alert("Hola, estas ingresando a la receta del sancocho de pescado. Bienvenido.");
+      localStorage.setItem('alertaMostrado', 'true');
+    }
     console.log("Hola desde la consola.");
   </script>
 </body>
