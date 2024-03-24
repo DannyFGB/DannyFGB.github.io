@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Triángulos</title>
+</head>
+<body>
+    <h1>Clasificador de Triángulos</h1>
+    <h2>Implementa una función clasificarTriangulo que tome la longitud de tres lados de un triángulo y 
+        devuelva un mensaje indicando si es equilátero, isósceles o escaleno.</h2>
+    
+    <label for="inputLado1">Longitud del primer lado:</label>
+    <input type="text" id="inputLado1" placeholder="Lado 1"><br><br>
+    
+    <label for="inputLado2">Longitud del segundo lado:</label>
+    <input type="text" id="inputLado2" placeholder="Lado 2"><br><br>
+    
+    <label for="inputLado3">Longitud del tercer lado:</label>
+    <input type="text" id="inputLado3" placeholder="Lado 3"><br><br>
+    
+    <button onclick="clasificarTriangulo()">Clasificar Triángulo</button>
+    
+    <div id="resultadoClasificacion"></div>
+    
+    <script>
+        function clasificarTriangulo() {
+            var lado1 = parseFloat(document.getElementById("inputLado1").value);
+            var lado2 = parseFloat(document.getElementById("inputLado2").value);
+            var lado3 = parseFloat(document.getElementById("inputLado3").value);
+            var clasificacion;
+
+            if (lado1 === lado2 && lado2 === lado3) {
+                clasificacion = "El triángulo es equilátero.";
+            } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+                clasificacion = "El triángulo es isósceles.";
+            } else {
+                clasificacion = "El triángulo es escaleno.";
+            }
+
+            document.getElementById("resultadoClasificacion").innerHTML = clasificacion;
+        }
+    </script>
+</body>
+</html>

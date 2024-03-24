@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+    <p>Crea una variable llamada nombreAnimal y asígnale el nombre de un animal.</p>
+    <button id = "botonAceptar" onclick= "mostrarNombreAnimal()">Aceptar</button>
+    <p id="animal"> </p>
+    <script>
+        var nombreAnimal = "Tigre";
+        function mostrarNombreAnimal(){
+        document.getElementById("animal").innerHTML = "El animal elegido es: " + nombreAnimal;
+    }
+    </script>
+</body>
+</html>

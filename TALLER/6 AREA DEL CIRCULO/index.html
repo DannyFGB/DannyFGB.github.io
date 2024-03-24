@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EJERCICIO 6</h1>
+    <P>Escribe una función calcularAreaCirculo que tome el radio como parámetro y devuelva el área.</P>
+    <br>
+    <p>Ingrese el radio de su circulo:</p>
+    <input type="number" id="radio" placeholder="Ingrese el radio del circulo">
+    <button onclick="mostrarArea()">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        function calcularAreaCirculo(radio){
+            return Math.PI * Math.pow(radio, 2);
+        }
+        function mostrarArea(){
+            var radio = document.getElementById("radio").value;
+            var area = calcularAreaCirculo(radio);
+            document.getElementById("resultado").innerHTML= "El area de tu circulo es: " + area;
+        }
+    </script>
+</body>
+</html>

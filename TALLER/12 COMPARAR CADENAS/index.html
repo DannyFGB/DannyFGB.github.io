@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 12</h1>
+    <p>Crea una función compararCadenas que tome dos cadenas como parámetros y 
+        devuelva true si son iguales, y false en caso contrario.</p>
+    <input type="number" id="dato1" placeholder="Ingrese la cadena 1">
+    <br>
+    <input type="number" id="dato2" placeholder="Ingrese la cadena 2">
+    <br>
+    <button onclick="comparar()">Comparar</button>
+    <p id="resultado"></p>
+    <script>
+        function comparar(){
+            var dato1 = document.getElementById("dato1").value;
+            var dato2 = document.getElementById("dato2").value;
+            if (dato1==dato2){
+                document.getElementById("resultado").innerHTML= "Las cadenas son iguales, True"
+                }else 
+                document.getElementById("resultado").innerHTML= "Las cadenas no son iguales, False"
+        }
+    </script>
+</body>
+</html>

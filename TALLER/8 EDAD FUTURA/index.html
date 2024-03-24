@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 8</h1>
+    <p>Escribe una función calcularEdadFutura que tome la edad actual como parámetro y 
+        devuelva la edad que tendrás dentro de 10 años.</p>
+    <input type="number" id="edadActual" placeholder="Ingrese su edad actual">
+    <button onclick= "calcularEdad()">Calcular</button>
+    <p id="resultado"></p>
+     <script>
+      function calcularEdad(){
+        var edad= parseFloat(document.getElementById("edadActual").value);
+        var edadFutura = edad+10;
+        document.getElementById("resultado").innerHTML= "Su edad en 10 años es: " + edadFutura;
+      }
+
+     </script>
+</body>
+</html>

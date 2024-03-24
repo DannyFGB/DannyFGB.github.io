@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Tarjeta de Crédito</title>
+</head>
+<body>
+    <h1>Validador de Tarjeta de Crédito</h1>
+    <h2>Crea una función validarTarjetaCredito que tome un número de tarjeta de crédito como parámetro y 
+        devuelva true si es válido (según algún algoritmo de validación simple), y false en caso contrario.</h2>
+    
+    <label for="inputNumeroTarjeta">Ingresa el número de tarjeta de crédito:</label>
+    <input type="text" id="inputNumeroTarjeta" placeholder="Número de tarjeta"><br><br>
+    
+    <button onclick="validarTarjetaCredito()">Validar Tarjeta de Crédito</button>
+    
+    <div id="resultadoValidacion"></div>
+    
+    <script>
+        function validarTarjetaCredito() {
+            var numeroTarjeta = document.getElementById("inputNumeroTarjeta").value;
+            var suma = 0;
+            var longitud = numeroTarjeta.length;
+            var par = longitud % 2;
+
+            for (var i = 0; i < longitud; i++) {
+                var digito = parseInt(numeroTarjeta.charAt(i));
+
+                if (i % 2 === par) {
+                    digito *= 2;
+                    if (digito > 9) {
+                        digito -= 9;
+                    }
+                }
+
+                suma += digito;
+            }
+
+            var esValida = (suma % 10 === 0);
+            document.getElementById("resultadoValidacion").innerHTML = esValida;
+        }
+    </script>
+</body>
+</html>

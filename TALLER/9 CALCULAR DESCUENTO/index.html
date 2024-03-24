@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 9</h1>
+    <p>Implementa una función calcularDescuento que tome el precio original y 
+        el porcentaje de descuento como parámetros, y devuelva el precio con descuento.</p>
+        <p> Precio del producto: </p>
+    <input type="number" id="precio" placeholder="Ingrese precio del producto">
+    <br>
+    <br>
+    <p>Descuento aplicable:</p>
+    <input type="number" id="descuento" placeholder="Ingrese decuento del producto">
+    <br>
+    <button onclick="calcularDescuento()">Aplicar</button>
+    <p id="resultado"></p>
+    <script>
+        function calcularDescuento(){
+            var precio = parseFloat(document.getElementById("precio").value);
+            var descuento = parseFloat(document.getElementById("descuento").value);
+            var calculo = precio - ((precio * descuento)/100);
+            document.getElementById("resultado").innerHTML= "Valor total con descuento aplicado es: $" + calculo; 
+        }
+    </script>
+</body>
+</html>

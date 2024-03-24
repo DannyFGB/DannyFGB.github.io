@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anioNacimiento</title>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+    <P>Declara una variable llamada anioNacimiento y asígnale el año en que naciste. 
+        Luego, calcula tu edad actual y almacénala en una variable llamada edad Actual.</P>
+        <button id = "botonAceptar" onclick= "mostrarEdadActual()">Edad Actual</button>
+        <p id = "resultado"></p>
+        <script>
+            var anioDeNacimiento= 1996;
+            var anioActual = 2024; 
+            var edadActual = anioActual-anioDeNacimiento;
+            function mostrarEdadActual(){ 
+              document.getElementById("resultado").innerHTML = "Tu edad actual es: " + edadActual + ". Tu año de nacimiento es: " + anioDeNacimiento;
+            }
+        </script>
+
+</body>
+</html>

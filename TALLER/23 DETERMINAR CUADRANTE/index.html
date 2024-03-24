@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinador de Cuadrante</title>
+</head>
+<body>
+    <h1>Determinador de Cuadrante</h1>
+    <h2>Desarrolla una función determinarCuadrante que tome las coordenadas x e y de un punto en un plano 
+        y devuelva en cuál cuadrante se encuentra.</h2>
+    
+    <label for="inputX">Coordenada X:</label>
+    <input type="text" id="inputX" placeholder="Coordenada X"><br><br>
+    
+    <label for="inputY">Coordenada Y:</label>
+    <input type="text" id="inputY" placeholder="Coordenada Y"><br><br>
+    
+    <button onclick="determinarCuadrante()">Determinar Cuadrante</button>
+    
+    <div id="resultadoCuadrante"></div>
+    
+    <script>
+        function determinarCuadrante() {
+            var x = parseFloat(document.getElementById("inputX").value);
+            var y = parseFloat(document.getElementById("inputY").value);
+            var cuadrante;
+
+            if (x === 0 || y === 0) {
+                cuadrante = "El punto está sobre un eje.";
+            } else if (x > 0 && y > 0) {
+                cuadrante = "El punto está en el primer cuadrante.";
+            } else if (x < 0 && y > 0) {
+                cuadrante = "El punto está en el segundo cuadrante.";
+            } else if (x < 0 && y < 0) {
+                cuadrante = "El punto está en el tercer cuadrante.";
+            } else {
+                cuadrante = "El punto está en el cuarto cuadrante.";
+            }
+
+            document.getElementById("resultadoCuadrante").innerHTML = cuadrante;
+        }
+    </script>
+</body>
+</html>

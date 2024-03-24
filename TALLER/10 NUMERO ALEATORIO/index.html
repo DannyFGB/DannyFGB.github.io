@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 10</h1>
+    <p>Crea una función generarNumeroAleatorio que devuelva un número aleatorio entre 1 y 100.</p>
+    <br>
+    <button onclick="generarNumeroAleatorio()">Generar aleatorio</button>
+    <p id="resultado"></p>
+    <script>
+        function generarNumeroAleatorio(){
+            const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("resultado").innerHTML = "Número aleatorio es: " + numeroAleatorio;
+        }
+    </script>
+</body>
+</html>
+

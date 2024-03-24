@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nombreDePelicula</title>
+</head>
+<body>
+    <h1>Ejercicio 4</h1>
+    <p>Crea una variable llamada nombrePelicula y asígnale el nombre de una película.</p>
+    <button id = "botonAceptar" onclick= "mostrarnombreDePelicula()">Aceptar</button>
+  <p id = "Pelicula"></p>
+  <script>
+    var pelicula= "Mision Imposible";
+    function mostrarnombreDePelicula() {
+      document.getElementById("Pelicula").innerHTML = "Tu pelicula favorita es: " + pelicula;
+    }
+  </script>
+
+</body>
+</html>

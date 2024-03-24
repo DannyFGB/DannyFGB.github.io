@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 13</h1>
+    <p>Implementa una función evaluarCalificaciones que tome una calificación 
+        como parámetro y devuelva un mensaje según la siguiente escala:
+        90-100: "Excelente"
+        80-89: "Bueno"
+        70-79: "Regular"
+        Menos de 70: "Insuficiente"</p>
+    <input type="number" id="calificación" placeholder="Ingrese la calificacion obtenida">
+    <button onclick="evaluar()">Evaluar</button>
+    <p id="resultado"></p>
+    <script>
+        function evaluar(){
+            var calificacion = parseFloat(document.getElementById("calificación").value);
+            if (calificacion >= 90 && calificacion <= 100){
+                document.getElementById("resultado").innerHTML = "Su calificacion es Excelente";
+            } else if (calificacion >= 80 && calificacion <= 89){
+                document.getElementById("resultado").innerHTML = "Su calificacion es Bueno";
+            } else if (calificacion >= 70 && calificacion <= 79){
+                document.getElementById("resultado").innerHTML = "Su calificacion es Regular";
+            } else {
+                document.getElementById("resultado").innerHTML = "Su calificacion es Insuficiente";
+            }
+        }
+    </script>
+</body>
+</html>

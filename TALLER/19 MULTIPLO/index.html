@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Múltiplos</title>
+</head>
+<body>
+    <h1>Verificador de Múltiplos</h1>
+    <h2>Escribe una función esMultiplo que tome dos números como parámetros y devuelva true si 
+        el primero es múltiplo del segundo, y false en caso contrario.</h2>
+    
+    <label for="inputNumero1">Ingresa el primer número:</label>
+    <input type="text" id="inputNumero1" placeholder="Número"><br><br>
+    
+    <label for="inputNumero2">Ingresa el segundo número:</label>
+    <input type="text" id="inputNumero2" placeholder="Número"><br><br>
+    
+    <button onclick="esMultiplo()">Verificar Múltiplo</button>
+    
+    <div id="resultadoMultiplo"></div>
+    
+    <script>
+        function esMultiplo() {
+            var numero1 = parseInt(document.getElementById("inputNumero1").value);
+            var numero2 = parseInt(document.getElementById("inputNumero2").value);
+            var esMultiplo = (numero1 % numero2 === 0);
+            document.getElementById("resultadoMultiplo").innerHTML = esMultiplo;
+        }
+    </script>
+</body>
+</html>

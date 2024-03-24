@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="../index.html">Pagina de inicio</a>
+    <h1>LIBRETA DE CONTACTOS</h1>
+    <label for="Name">Nombre:</label>
+    <input type="text" id="name" name="name"> <br><br>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email"><br><br>
+    <button onclick="guardarContacto()"> Añadir contacto</button>
+    <button onclick="borrarTodosLosContactos()">Limpiar tabla</button>
+    <div id="modalEditar" style="display: none;">
+        <input type="text" id="nuevoNombre" placeholder="Nuevo nombre">
+        <input type="email" id="nuevoEmail" placeholder="Nuevo email">
+        <button onclick="actualizarContactoConNuevosValores()">Confirmar</button>
+    </div>
+    <hr>
+    <table id="tablaContacto" border="5">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los contactos se agregarán por cada registro de usuario en plataforma -->
+        </tbody>
+    </table>
+    <script>
+        let contacto = [];
+        const tablaContacto = document.getElementById("tablaContacto").getElementsByTagName("tbody")[0];
+
+        function guardarContacto() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value
+            if (name.trim() === "" || email.trim() === "") {
+                alert("Por favor, completa todos los campos antes de guardar un contacto.");
+                return;
+            }
+            for (let i = 0; i < contacto.length; i++) {
+                if (contacto[i].email === email) {
+                    alert("Este correo electrónico ya está en uso. Por favor, introduce un correo electrónico diferente.");
+                    return;
+                }
+            }
+            const nuevoContacto = { name, email };
+            contacto.push(nuevoContacto);
+            actualizartabla();
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+        }
+        function actualizartabla() {
+            tablaContacto.innerHTML = "";
+            contacto.forEach(function (contact, index) {
+                const row = `<tr>
+                        <td>${contact.name}</td>
+                        <td>${contact.email}</td>
+                        <td><button onclick="eliminarContacto(${index})">Eliminar</button></td>
+                        <td><button onclick="mostrarModalEditar(${index})">Modificar</button></td>
+                    </tr>`;
+                tablaContacto.innerHTML += row;
+            });
+        }
+        function eliminarContacto(index) {
+            const confirmacion = confirm("¿Estás seguro de que quieres eliminar este contacto?");
+            if (confirmacion) {
+                contacto.splice(index, 1);
+                actualizartabla();
+            }
+        }
+        function mostrarModalEditar(index) {
+            document.getElementById('modalEditar').style.display = 'block';
+            sessionStorage.setItem('indexContacto', index);
+        }
+
+        function actualizarContactoConNuevosValores() {
+            const index = sessionStorage.getItem('indexContacto');
+            if (index !== null) {
+                const nuevoNombre = document.getElementById('nuevoNombre').value;
+                const nuevoEmail = document.getElementById('nuevoEmail').value;
+                if (nuevoNombre.trim() === "" || nuevoEmail.trim() === "") {
+                    alert("Por favor, completar todos los campos antes de actualizar un contacto.");
+                    return;
+                }
+                actualizarContacto(index, nuevoNombre, nuevoEmail);
+                document.getElementById('modalEditar').style.display = 'none';
+            } else {
+                console.error("Índice no encontrado en sessionStorage");
+            }
+        }
+
+        function actualizarContacto(index, nuevoNombre, nuevoEmail) {
+            if (index >= 0 && index < contacto.length) {
+                contacto[index].name = nuevoNombre;
+                contacto[index].email = nuevoEmail;
+                actualizartabla();
+            } else {
+                console.error("Índice inválido");
+            }
+        }
+        function borrarTodosLosContactos() {
+            const confirmacion = confirm("¿Estás seguro de que quieres borrar todos los contactos?");
+            if (confirmacion) {
+                contacto = [];
+                actualizartabla();
+            }
+        }    
+    </script>
+</body>
+
+</html>

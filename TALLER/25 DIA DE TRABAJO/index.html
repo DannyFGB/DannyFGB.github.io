@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Día Laboral</title>
+</head>
+<body>
+    <h1>Verificador de Día Laboral</h1>
+    <h2>Escribe una función esDiaDeTrabajo que tome un día de la semana como parámetro y 
+        devuelva true si es un día laboral, y false si es fin de semana.</h2>
+    
+    <label for="inputDia">Ingresa un día de la semana (1 al 7):</label>
+    <input type="text" id="inputDia" placeholder="Día de la semana"><br><br>
+    
+    <button onclick="esDiaDeTrabajo()">Verificar Día Laboral</button>
+    
+    <div id="resultadoDiaLaboral"></div>
+    
+    <script>
+        function esDiaDeTrabajo() {
+            var diaSemana = parseInt(document.getElementById("inputDia").value);
+            var esLaboral = (diaSemana >= 1 && diaSemana <= 5);
+            document.getElementById("resultadoDiaLaboral").innerHTML = esLaboral;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 11</h1>
+    <p>Escribe una función esMayorDeEdad que tome la edad como parámetro y 
+        devuelva un mensaje indicando si es mayor de edad o no</p>
+    <input type="number" id="edad" placeholder="Ingrese su edad">
+    <button onclick="ingresar()">Ingresar</button>
+    <p id="resultado"></p>
+    <script>
+        function ingresar(){
+            var edad = document.getElementById("edad").value;
+            if (edad>=18){
+                document.getElementById("resultado").innerHTML= "Es mayor de edad."
+            }else 
+            document.getElementById("resultado").innerHTML= "Es menor de edad."          
+            
+        }
+    </script>
+</body>
+</html>

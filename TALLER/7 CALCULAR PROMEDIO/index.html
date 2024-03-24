@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 7</h1>
+    <p>Crea una función calcularPromedioTresNumeros que tome tres números como parámetros y devuelva su promedio.</p>
+    <p>Ingrese los numeros para obtener su promedio: </p>
+    <br>
+    <input type="number" id = "dato1" placeholder="Ingrese su primer dato">
+    <input type="number" id= "dato2" placeholder="Ingrese su segundo dato">
+    <input type="number" id= "dato3" placeholder="Ingrese su tercer dato">
+    <button onclick="calcularPromedio()">Promediar</button>
+    <p id="promedio"></p>
+    <script>
+        function calcularPromedio(){
+         var dato1 = parseFloat(document.getElementById("dato1").value);
+         var dato2 = parseFloat(document.getElementById("dato2").value);
+         var dato3 = parseFloat(document.getElementById("dato3").value);
+         var promedio = (dato1 + dato2 + dato3) / 3 ;
+         document.getElementById("promedio").innerHTML = "El promedio de sus datos es: " + promedio;
+        }
+    </script>
+</body>
+</html>

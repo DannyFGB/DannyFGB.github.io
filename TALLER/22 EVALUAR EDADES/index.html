@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluador de Edades</title>
+</head>
+<body>
+    <h1>Evaluador de Edades</h1>
+    <h2>Crea una función evaluarEdades que tome dos edades como parámetros y devuelva un mensaje indicando 
+        si son iguales, y si no lo son, cuál es mayor.</h2>
+    
+    <label for="inputEdad1">Ingresa la primera edad:</label>
+    <input type="text" id="inputEdad1" placeholder="Edad 1"><br><br>
+    
+    <label for="inputEdad2">Ingresa la segunda edad:</label>
+    <input type="text" id="inputEdad2" placeholder="Edad 2"><br><br>
+    
+    <button onclick="evaluarEdades()">Evaluar Edades</button>
+    
+    <div id="resultadoEdades"></div>
+    
+    <script>
+        function evaluarEdades() {
+            var edad1 = parseInt(document.getElementById("inputEdad1").value);
+            var edad2 = parseInt(document.getElementById("inputEdad2").value);
+            var mensaje;
+
+            if (edad1 === edad2) {
+                mensaje = "Las edades son iguales.";
+            } else if (edad1 > edad2) {
+                mensaje = "La primera edad es mayor que la segunda.";
+            } else {
+                mensaje = "La segunda edad es mayor que la primera.";
+            }
+
+            document.getElementById("resultadoEdades").innerHTML = mensaje;
+        }
+    </script>
+</body>
+</html>

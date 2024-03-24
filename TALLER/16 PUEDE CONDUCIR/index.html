@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Capacidad para Conducir</title>
+</head>
+<body>
+    <h1>Verificador de Capacidad para Conducir</h1>
+    <h2>Desarrolla una función puedeConducir que tome la edad y si tiene licencia como parámetros y 
+        devuelva true si la persona puede conducir, y false en caso contrario.</h2>
+    
+    <label for="inputEdad">Edad:</label>
+    <input type="text" id="inputEdad" placeholder="Edad"><br><br>
+    
+    <label for="inputLicencia">¿Tiene licencia? (true/false):</label>
+    <input type="text" id="inputLicencia" placeholder="true/false"><br><br>
+    
+    <button onclick="puedeConducir()">Verificar Capacidad para Conducir</button>
+    
+    <div id="resultadoConducir"></div>
+    
+    <script>
+        function puedeConducir() {
+            var edad = parseInt(document.getElementById("inputEdad").value);
+            var tieneLicencia = document.getElementById("inputLicencia").value === 'true';
+            var puedeConducir = (edad >= 18 && tieneLicencia);
+            document.getElementById("resultadoConducir").innerHTML = puedeConducir;
+        }
+    </script>
+</body>
+</html>
